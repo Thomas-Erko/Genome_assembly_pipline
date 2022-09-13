@@ -1,0 +1,31 @@
+Command line: /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/bin/spades.py	-1	/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_1_paired.fastq.gz	-2	/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_2_paired.fastq.gz	-o	/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results	--only-error-correction	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.9.13
+  OS: macOS-11.6.4-x86_64-i386-64bit
+
+Output dir: /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results
+Mode: ONLY read error correction (without assembling)
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_1_paired.fastq.gz']
+      right reads: ['/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_2_paired.fastq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Other parameters:
+  Dir for temp files: /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/tmp
+  Threads: 16
+  Memory limit (in Gb): 250
+

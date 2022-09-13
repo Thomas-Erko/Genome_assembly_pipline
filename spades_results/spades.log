@@ -1,0 +1,155 @@
+Command line: /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/bin/spades.py	-1	/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_1_paired.fastq.gz	-2	/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_2_paired.fastq.gz	-o	/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results	--only-error-correction	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.9.13
+  OS: macOS-11.6.4-x86_64-i386-64bit
+
+Output dir: /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results
+Mode: ONLY read error correction (without assembling)
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_1_paired.fastq.gz']
+      right reads: ['/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_2_paired.fastq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Other parameters:
+  Dir for temp files: /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/tmp
+  Threads: 16
+  Memory limit (in Gb): 250
+
+
+======= SPAdes pipeline started. Log can be found here: /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/spades.log
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/bin/spades-hammer /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/configs/config.info
+
+  0:00:00.000     1M / 3M    INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from refs/heads/master, git revision 54bed604152fd271b68bdf7b78bfd0788ea9e431
+  0:00:00.005     1M / 3M    INFO    General                 (main.cpp                  :  76)   Loading config from /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/configs/config.info
+  0:00:00.009     1M / 3M    INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 8
+  0:00:00.009     1M / 3M    INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 250 Gb
+  0:00:00.009     1M / 3M    INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.010     1M / 3M    INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.010     1M / 3M    INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.010     1M / 3M    INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.012     1M / 3M    INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 16 files using 8 threads. This might take a while.
+  0:00:00.012     1M / 3M    INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 2560
+  0:00:00.012     1M / 3M    INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 10.4167 Gb
+  0:00:00.012     1M / 3M    INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 4194304
+  0:00:00.013  4609M / 4609M INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_1_paired.fastq.gz
+  0:00:30.406  4609M / 4609M INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 1842758 reads
+  0:00:30.407  4609M / 4609M INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_2_paired.fastq.gz
+  0:00:50.919  4609M / 4609M INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 3685516 reads
+  0:00:50.919  4609M / 4609M INFO   K-mer Splitting          (kmer_data.cpp             : 112)   Total 3685516 reads processed
+  0:00:50.919     1M / 12M   INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  0:00:54.733     1M / 77M   INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 93355350 kmers in total.
+  0:00:54.742     1M / 77M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:01:01.296    69M / 158M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 93355350 kmers, 67439064 bytes occupied (5.77913 bits per kmer).
+  0:01:01.296    69M / 158M  INFO   K-mer Counting           (kmer_data.cpp             : 354)   Arranging kmers in hash map order
+  0:01:04.988  1502M / 1582M INFO    General                 (main.cpp                  : 148)   Clustering Hamming graph.
+  0:03:26.242  1502M / 1582M INFO    General                 (main.cpp                  : 155)   Extracting clusters:
+  0:03:26.242  1502M / 1582M INFO    General                 (concurrent_dsu.cpp        :  18)   Connecting to root
+  0:03:27.005  1502M / 1582M INFO    General                 (concurrent_dsu.cpp        :  34)   Calculating counts
+  0:03:40.768  2046M / 2126M INFO    General                 (concurrent_dsu.cpp        :  63)   Writing down entries
+  0:04:18.229  1502M / 1502M INFO    General                 (main.cpp                  : 167)   Clustering done. Total clusters: 23261271
+  0:04:18.280   786M / 786M  INFO   K-mer Counting           (kmer_data.cpp             : 371)   Collecting K-mer information, this takes a while.
+  0:04:19.201  2926M / 2926M INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_1_paired.fastq.gz
+  0:05:04.782  2926M / 2926M INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_2_paired.fastq.gz
+  0:05:49.444  2926M / 2926M INFO   K-mer Counting           (kmer_data.cpp             : 384)   Collection done, postprocessing.
+  0:05:49.751  2926M / 2926M INFO   K-mer Counting           (kmer_data.cpp             : 398)   There are 93355350 kmers in total. Among them 72693542 (77.8676%) are singletons.
+  0:05:49.751  2926M / 2926M INFO    General                 (main.cpp                  : 173)   Subclustering Hamming graph
+  0:13:17.864  2926M / 2926M INFO   Hamming Subclustering    (kmer_cluster.cpp          : 650)   Subclustering done. Total 4899 non-read kmers were generated.
+  0:13:17.867  2926M / 2926M INFO   Hamming Subclustering    (kmer_cluster.cpp          : 651)   Subclustering statistics:
+  0:13:17.867  2926M / 2926M INFO   Hamming Subclustering    (kmer_cluster.cpp          : 652)     Total singleton hamming clusters: 15989680. Among them 405406 (2.53542%) are good
+  0:13:17.867  2926M / 2926M INFO   Hamming Subclustering    (kmer_cluster.cpp          : 653)     Total singleton subclusters: 6181. Among them 5389 (87.1865%) are good
+  0:13:17.867  2926M / 2926M INFO   Hamming Subclustering    (kmer_cluster.cpp          : 654)     Total non-singleton subcluster centers: 7689101. Among them 6968175 (90.6241%) are good
+  0:13:17.867  2926M / 2926M INFO   Hamming Subclustering    (kmer_cluster.cpp          : 655)     Average size of non-trivial subcluster: 10.0628 kmers
+  0:13:17.868  2926M / 2926M INFO   Hamming Subclustering    (kmer_cluster.cpp          : 656)     Average number of sub-clusters per non-singleton cluster: 1.05827
+  0:13:17.868  2926M / 2926M INFO   Hamming Subclustering    (kmer_cluster.cpp          : 657)     Total solid k-mers: 7378970
+  0:13:17.868  2926M / 2926M INFO   Hamming Subclustering    (kmer_cluster.cpp          : 658)     Substitution probabilities: [4,4]((0.94194,0.0255745,0.00533815,0.0271469),(0.0412201,0.941561,0.011684,0.00553525),(0.00527358,0.0114402,0.94164,0.041646),(0.026855,0.00515946,0.0253053,0.94268))
+  0:13:17.955  2926M / 2926M INFO    General                 (main.cpp                  : 178)   Finished clustering.
+  0:13:17.955  2926M / 2926M INFO    General                 (main.cpp                  : 197)   Starting solid k-mers expansion in 8 threads.
+  0:13:53.599  2926M / 2932M INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 0 produced 5179837 new k-mers.
+  0:14:28.330  2926M / 2932M INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 1 produced 311504 new k-mers.
+  0:15:03.642  2926M / 2926M INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 2 produced 8779 new k-mers.
+  0:15:39.961  2926M / 2926M INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 3 produced 451 new k-mers.
+  0:16:15.816  2926M / 2926M INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 4 produced 45 new k-mers.
+  0:16:50.429  2926M / 2926M INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 5 produced 0 new k-mers.
+  0:16:50.430  2926M / 2926M INFO    General                 (main.cpp                  : 222)   Solid k-mers finalized
+  0:16:50.430  2926M / 2926M INFO    General                 (hammer_tools.cpp          : 222)   Starting read correction in 8 threads.
+  0:16:50.430  2926M / 2926M INFO    General                 (hammer_tools.cpp          : 235)   Correcting pair of reads: /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_1_paired.fastq.gz and /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_2_paired.fastq.gz
+  0:16:54.958  3567M / 3567M INFO    General                 (hammer_tools.cpp          : 170)   Prepared batch 0 of 800000 reads.
+  0:17:18.392  3595M / 3595M INFO    General                 (hammer_tools.cpp          : 177)   Processed batch 0
+  0:17:22.902  3595M / 3595M INFO    General                 (hammer_tools.cpp          : 187)   Written batch 0
+  0:17:26.636  3709M / 3709M INFO    General                 (hammer_tools.cpp          : 170)   Prepared batch 1 of 800000 reads.
+  0:17:53.765  3731M / 3731M INFO    General                 (hammer_tools.cpp          : 177)   Processed batch 1
+  0:17:59.735  3731M / 3731M INFO    General                 (hammer_tools.cpp          : 187)   Written batch 1
+  0:18:00.810  3741M / 3741M INFO    General                 (hammer_tools.cpp          : 170)   Prepared batch 2 of 242758 reads.
+  0:18:08.119  3745M / 3888M INFO    General                 (hammer_tools.cpp          : 177)   Processed batch 2
+  0:18:09.580  3745M / 3745M INFO    General                 (hammer_tools.cpp          : 187)   Written batch 2
+  0:18:10.670  2926M / 3424M INFO    General                 (hammer_tools.cpp          : 276)   Correction done. Changed 2695989 bases in 1532757 reads.
+  0:18:10.681  2926M / 2926M INFO    General                 (hammer_tools.cpp          : 277)   Failed to correct 388 bases out of 468704325.
+  0:18:11.091     1M / 322M  INFO    General                 (main.cpp                  : 255)   Saving corrected dataset description to /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/corrected.yaml
+  0:18:11.098     1M / 97M   INFO    General                 (main.cpp                  : 262)   All done. Exiting.
+
+===== Read error correction finished. 
+
+
+===== corrected reads compression started. 
+
+
+== Running: /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/bin/python /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/share/spades/spades_pipeline/scripts/compress_all.py --input_file /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/corrected.yaml --ext_python_modules_home /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/share/spades --max_threads 16 --output_dir /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected --gzip_output
+
+== Compressing corrected reads (with gzip)
+== Files to compress: ['/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/SRR15202685_1_paired.fastq.00.0_0.cor.fastq', '/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/SRR15202685_2_paired.fastq.00.0_0.cor.fastq', '/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/SRR15202685__unpaired.00.0_0.cor.fastq']
+== Files compression is finished
+== Dataset yaml file is updated
+
+===== corrected reads compression finished. 
+
+
+===== Read error correction finished. 
+
+
+===== Breaking scaffolds started. 
+
+
+== Running: /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/bin/python /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py --result_scaffolds_filename /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/scaffolds.fasta --misc_dir /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/misc --threshold_for_breaking_scaffolds 3
+
+
+===== Breaking scaffolds finished. 
+
+
+===== Terminate started. 
+
+
+===== Terminate finished. 
+
+ * Corrected reads are in /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/
+
+======= SPAdes pipeline finished.
+
+SPAdes log can be found here: /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/spades.log
+
+Thank you for using SPAdes!

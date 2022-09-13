@@ -1,0 +1,70 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: ec_start
+- STAGE: Read error correction
+  args:
+  - /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/configs/config.info
+  config_dir: corrected
+  del_after:
+  - tmp/hammer_2bsjlofo
+  output_files:
+  - /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/corrected.yaml
+  path: /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/bin/spades-hammer
+  short_name: ec_runtool
+- STAGE: corrected reads compression
+  args:
+  - /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/share/spades/spades_pipeline/scripts/compress_all.py
+  - --input_file
+  - /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected/corrected.yaml
+  - --ext_python_modules_home
+  - /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/share/spades
+  - --max_threads
+  - '16'
+  - --output_dir
+  - /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/corrected
+  - --gzip_output
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/bin/python
+  short_name: ec_compress
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: ec_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/scaffolds.fasta
+  - --misc_dir
+  - /Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/spades_results/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /Users/thomaserko/opt/anaconda3/envs/genome_assembly_env/bin/python
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  output_files: []
+  path: 'true'
+  short_name: terminate

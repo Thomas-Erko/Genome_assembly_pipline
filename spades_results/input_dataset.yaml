@@ -1,0 +1,7 @@
+- "left reads":
+  - "/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_1_paired.fastq.gz"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/Users/thomaserko/Desktop/pyhton/VS_code/Principles_of_bioinfo/SRA-toolkit/tmp/sra/SRR15202685_2_paired.fastq.gz"
+  "type": "paired-end"
